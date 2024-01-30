@@ -9,10 +9,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontawesomeObject } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CatnavigationComponent } from './catnavigation/catnavigation.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    CatnavigationComponent
   ],
   imports: [
     BrowserModule,
