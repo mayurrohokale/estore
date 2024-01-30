@@ -11,9 +11,11 @@ import { FontawesomeObject } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CatnavigationComponent } from './home/components/catnavigation/catnavigation.component';
 import { HomeModule } from './home/home.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
     
   ],
   imports: [
