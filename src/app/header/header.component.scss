@@ -40,3 +40,44 @@ $search-bar-border:none;
     background-color: $search-bar-background-color;
     font-weight: 600;
 }
+
+.login-container {
+    color: white;
+    display: inline-block;
+    width: 15%;
+    text-align: right;
+    margin: 1.7em 0.2em 0 0;
+
+    h5 {
+        display: inline-block;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        
+    
+    }
+    
+    .user-icon {
+        margin-right: 0.4em;
+        padding: 0.2em;
+        font-size: 1.3em;
+    
+    }
+}
+
+
+
+.cart-whishlist{
+    width: 8%;
+    margin-top: 1.7em;
+    margin-left: 1em;
+
+    .list-item {
+        color: white;
+        list-style-type: none;
+        display: inline-block;
+        font-size: 1.3em;
+        margin-right: 0.5em;
+    }
+}
