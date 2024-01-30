@@ -6,6 +6,7 @@ import { catchError } from 'rxjs';
 import { CatnavigationComponent } from './components/catnavigation/catnavigation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidenavigationComponent } from './components/sidenavigation/sidenavigation.component';
+import { ProductsComponent } from './components/products/products.component';
 
 
 
@@ -14,7 +15,8 @@ import { SidenavigationComponent } from './components/sidenavigation/sidenavigat
     HomeComponent,
     HeaderComponent,
     CatnavigationComponent,
-    SidenavigationComponent
+    SidenavigationComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,
