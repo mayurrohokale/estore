@@ -2,3 +2,23 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+@mixin underline-transition($width){
+    &::after{
+        content: '';
+        display: block;
+        bottom: 0;
+        left: 0;
+        height: 0.2em;
+        background-color: red;
+        transform: scaleX(0);
+        transition-property: transform;
+        transition-duration: 0.2s;
+    }
+    &:hover{
+        &::after{
+            transform: scaleX($width);
+
+        }
+    }
+}
