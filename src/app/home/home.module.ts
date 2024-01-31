@@ -7,6 +7,7 @@ import { CatnavigationComponent } from './components/catnavigation/catnavigation
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidenavigationComponent } from './components/sidenavigation/sidenavigation.component';
 import { ProductsComponent } from './components/products/products.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -20,7 +21,8 @@ import { ProductsComponent } from './components/products/products.component';
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SharedModule
   ]
 })
 export class HomeModule { }
