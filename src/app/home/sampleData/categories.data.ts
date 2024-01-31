@@ -16,14 +16,17 @@ export const categories:Category[]=[
     {
         id:4,
         category:"Casual Wear",
+        parent_category_id:1,
     },
     {
         id:5,
         category:'Party Wear',
+        parent_category_id:2,
     },
     {
         id:6,
         category:'Foot wear',
+        parent_category_id:2,
     },
     {
         id:7,

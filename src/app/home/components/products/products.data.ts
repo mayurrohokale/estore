@@ -9,7 +9,7 @@ export const products: ProductListItem[]=[
     },
     {
         id:2,
-        product_name: 'Jeans',
+        product_name: 'dress',
         product_img:'img2',
         price: 65,
     },
