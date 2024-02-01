@@ -9,6 +9,8 @@ import { SidenavigationComponent } from './components/sidenavigation/sidenavigat
 import { ProductsComponent } from './components/products/products.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoryService } from './services/category.service';
+import { CategoriesStoreItem } from './services/categories.storeItem';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     SharedModule,
     HttpClientModule
-  ]
+  ],
+  providers:[CategoryService, CategoriesStoreItem]
 })
 export class HomeModule { }
