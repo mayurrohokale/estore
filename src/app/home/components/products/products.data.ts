@@ -41,6 +41,6 @@ export const products: ProductListItem[]=[
         product_name:'Back pack',
         product_img:'img6',
         price:35,
-        ratings:5
+        ratings:3.5
     }
 ]

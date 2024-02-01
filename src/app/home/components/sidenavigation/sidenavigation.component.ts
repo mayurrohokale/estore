@@ -10,10 +10,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 export class SidenavigationComponent {
   categories:Category[]=[];
   constructor(categoryService:CategoryService){
-    this.categories = categoryService.getAllcategories();
+    categoryService.getAllcategories().subscribe((categories) => {
+      this.categories = categories;
+    });
   }
 
   getCategories(pareCategoryId?:number):Category[]{
-    return this.categories.filter(category => category.parent_category_id === pareCategoryId);
+    return this.categories.filter(
+      (category) =>  pareCategoryId ? category.parent_category_id === pareCategoryId : 
+      category.parent_category_id === null
+    );
+   
   }
 }

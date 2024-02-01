@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidenavigationComponent } from './components/sidenavigation/sidenavigation.component';
 import { ProductsComponent } from './components/products/products.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ]
 })
 export class HomeModule { }
