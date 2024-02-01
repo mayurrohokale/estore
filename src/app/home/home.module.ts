@@ -9,10 +9,10 @@ import { SidenavigationComponent } from './components/sidenavigation/sidenavigat
 import { ProductsComponent } from './components/products/products.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { CategoryService } from './services/category.service';
-import { CategoriesStoreItem } from './services/categories.storeItem';
-
-
+import { CategoryService } from './services/category/category.service';
+import { CategoriesStoreItem } from './services/category/categories.storeItem';
+import { ProductsStoreItem } from './services/product/products.storeItem';
+import { ProductsService } from './services/product/products.service';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -27,6 +27,6 @@ import { CategoriesStoreItem } from './services/categories.storeItem';
     SharedModule,
     HttpClientModule
   ],
-  providers:[CategoryService, CategoriesStoreItem]
+  providers:[CategoryService, CategoriesStoreItem, ProductsService, ProductsStoreItem]
 })
 export class HomeModule { }

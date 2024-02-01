@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Category } from '../../types/category.type';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OnDestroy } from '@angular/core';
-import { CategoriesStoreItem } from '../../services/categories.storeItem';
+import { CategoriesStoreItem } from '../../services/category/categories.storeItem';
 import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-sidenavigation',

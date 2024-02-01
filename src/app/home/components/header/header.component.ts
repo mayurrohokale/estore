@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faSearch, faUser, faUserCircle, faHeart, faShoppingCart, } from '@fortawesome/free-solid-svg-icons';
 import { FontawesomeObject } from '@fortawesome/fontawesome-svg-core';
-import { CategoriesStoreItem } from '../../services/categories.storeItem';
+import { CategoriesStoreItem } from '../../services/category/categories.storeItem';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
