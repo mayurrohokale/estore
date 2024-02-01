@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Category } from '../../types/category.type';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OnDestroy } from '@angular/core';
@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./sidenavigation.component.scss']
 })
 export class SidenavigationComponent implements OnDestroy {
+  @Output()
+  subCategoryClicked: EventEmitter<number> = new EventEmitter<number>();
   categories:Category[]=[];
   subscriptions: Subscription = new Subscription();
 
@@ -28,6 +30,11 @@ export class SidenavigationComponent implements OnDestroy {
     );
    
   }
+
+  OnSubCategoryClick(subCategory: Category) : void{
+    this.subCategoryClicked.emit(subCategory.id);
+  }
+
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
