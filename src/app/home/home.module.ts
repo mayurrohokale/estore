@@ -15,13 +15,15 @@ import { ProductsStoreItem } from './services/product/products.storeItem';
 import { ProductsService } from './services/product/products.service';
 import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './home-routing.module';
+import { ProductsGalleryComponent } from './components/products-gallery/products-gallery.component';
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
     CatnavigationComponent,
     SidenavigationComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductsGalleryComponent
   ],
   imports: [
     CommonModule,
