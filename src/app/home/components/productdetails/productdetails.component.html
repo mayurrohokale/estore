@@ -11,7 +11,15 @@
         price: <span class="price">{{product.price | currency}}</span>
         <div>Inclusive of all taxes.</div>
         <div class="my-3 product-description">
-            {{product.product_description}} 
+            {{product.product_discription}} 
+        </div>
+        <div class="my-5 btn btn-warning cart-button" (click)="addToCart()">
+            <div class="cart-icon-container">
+                <fa-icon [icon]="faShoppingCart" ></fa-icon>
+            </div>
+            <div class="cart-text-container">
+                <p>Add to Cart</p>
+            </div>
         </div>
        </div>
     </div>
