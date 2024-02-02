@@ -7,4 +7,7 @@
             <p><app-ratings [score]="product.ratings"></app-ratings></p>
         </div>
     </div>
+    <div *ngIf="!productsStore.peoducts.length">
+        No products found!
+    </div>
 </div>
