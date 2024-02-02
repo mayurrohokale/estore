@@ -1,0 +1,34 @@
+.product-details-container {
+    margin: auto;
+    padding: 1em;
+
+    .product-image-container {
+        text-align: center;
+
+        img {
+            height: 25em;
+            border-radius: 1em;
+        }
+    }
+
+    .product-information-container{
+        padding-left: 3em;
+
+        #product-name {
+            font-size: 2.7em;
+            font-weight: 500;
+            color: gray;
+        }
+
+        .price {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: black;
+        }
+    }
+
+    .product-description{
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,17 @@
+<div class="row my-5 product-details-container">
+    <div class="col-5 product-image-container">
+        <img [src]="'../../../../assets/images/img1.jpg'" />
+    </div>
+    <div class="col-7 product-information-container">
+       <span id="product-name">Product Name</span>
+       <app-ratings [score]="4"></app-ratings>
+       <hr/>
+       <div class="product-price">
+        price: <span class="price">$45</span>
+        <div>Inclusive of all taxes.</div>
+        <div class="my-3 product-description">
+            Prduct Description here 
+        </div>
+       </div>
+    </div>
+</div>
