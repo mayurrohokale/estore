@@ -13,6 +13,8 @@ import { CategoryService } from './services/category/category.service';
 import { CategoriesStoreItem } from './services/category/categories.storeItem';
 import { ProductsStoreItem } from './services/product/products.storeItem';
 import { ProductsService } from './services/product/products.service';
+import { RouterModule } from '@angular/router';
+import { HomeRoutingModule } from './home-routing.module';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -25,7 +27,9 @@ import { ProductsService } from './services/product/products.service';
     CommonModule,
     FontAwesomeModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    HomeRoutingModule
   ],
   providers:[CategoryService, CategoriesStoreItem, ProductsService, ProductsStoreItem]
 })
