@@ -1,16 +1,16 @@
 <div class="row my-5 product-details-container">
     <div class="col-5 product-image-container">
-        <img [src]="'../../../../assets/images/img1.jpg'" />
+        <img [src]="'../../../../assets/images/' + product.product_img" />
     </div>
     <div class="col-7 product-information-container">
-       <span id="product-name">Product Name</span>
-       <app-ratings [score]="4"></app-ratings>
+       <span id="product-name">{{product.product_name}}</span>
+       <app-ratings [score]="product.ratings"></app-ratings>
        <hr/>
        <div class="product-price">
-        price: <span class="price">$45</span>
+        price: <span class="price">{{product.price | currency}}</span>
         <div>Inclusive of all taxes.</div>
         <div class="my-3 product-description">
-            Prduct Description here 
+            {{product.product_description}} 
         </div>
        </div>
     </div>
