@@ -1,4 +1,5 @@
 <div class="row my-5 product-details-container">
+    <ng-container *ngIf="product">
     <div class="col-5 product-image-container">
         <img [src]="'../../../../assets/images/' + product.product_img" />
     </div>
@@ -14,4 +15,5 @@
         </div>
        </div>
     </div>
+</ng-container>
 </div>

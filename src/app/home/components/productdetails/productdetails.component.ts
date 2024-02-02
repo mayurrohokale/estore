@@ -11,9 +11,9 @@ import { Subscription } from 'rxjs';
 export class ProductdetailsComponent implements OnInit, OnDestroy{
 
   product: Product;
-  subscriptions: Subscription =new Subscription();
+  subscriptions: Subscription = new Subscription();
 
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService){
+  constructor(private activatedRoute: ActivatedRoute, private productsService: ProductsService){
 
   }
   
@@ -21,7 +21,7 @@ export class ProductdetailsComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     const id: number = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.subscriptions.add(
-    this.productService.getProduct(id).subscribe(product => {
+    this.productsService.getProduct(id).subscribe(product => {
       this.product = product[0];
     }));
   }

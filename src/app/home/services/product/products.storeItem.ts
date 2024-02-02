@@ -23,7 +23,7 @@ export class ProductsStoreItem extends StoreItem<Product[]> {
         return this.value$;
     }
 
-    get peoducts(): Product[] {
+    get products(): Product[] {
         return this.value;
     }
 
