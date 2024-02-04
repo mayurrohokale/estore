@@ -34,4 +34,8 @@ constructor(public  categoryStore: CategoriesStoreItem, private router: Router, 
     });
   }
 
+  navigatToCart():void{
+    this.router.navigate(['home/cart']);
+  }
+
 }

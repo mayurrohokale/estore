@@ -22,7 +22,8 @@
                 <h5><a href="#">sign in</a></h5> / <h5><a href="#">Register</a></h5>
        </div>
        <div class="cart-whishlist p-0 list-item">
-            <button type="submit" class="btn btn-dark position-relative">
+            <button type="submit" class="btn btn-dark position-relative"
+            (click)="navigatToCart()">
                 <fa-icon [icon]="faShoppingCart"></fa-icon>
                 <ng-container *ngIf="cartStore.cart$ | async as cart">
                     <span *ngIf="cart.totalProducts > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
