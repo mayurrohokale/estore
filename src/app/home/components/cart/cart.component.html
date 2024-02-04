@@ -53,7 +53,7 @@
             <hr />
         </div>
 
-        <div class="col-4 px-4 py-3 my-4 cart-summary">
+        <div class="col-4 px-4 py-3 my-4 cart-summary" *ngIf="cartStore.cart.products.length">
             <h2 class="mb-5 mt-3">Summary</h2>
             <div>
                 <span>Cart Total : {{cart.totalAmount | currency}}</span>
