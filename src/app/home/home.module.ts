@@ -19,6 +19,8 @@ import { ProductsGalleryComponent } from './components/products-gallery/products
 import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { CartStoreItem } from './services/cart/cart.storeItem';
 import { CartComponent } from './components/cart/cart.component';
+import { UserSignupComponent } from './components/users/user-signup/user-signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -28,7 +30,8 @@ import { CartComponent } from './components/cart/cart.component';
     ProductsComponent,
     ProductsGalleryComponent,
     ProductdetailsComponent,
-    CartComponent
+    CartComponent,
+    UserSignupComponent
   ],
   imports: [
     CommonModule,
