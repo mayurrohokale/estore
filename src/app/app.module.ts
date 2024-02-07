@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CatnavigationComponent } from './home/components/catnavigation/catnavigation.component';
 
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
+    ReactiveFormsModule
    
     
     

@@ -39,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     HttpClientModule,
     RouterModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ReactiveFormsModule
   ],
   providers:[CategoryService, CategoriesStoreItem, ProductsService, ProductsStoreItem, CartStoreItem]
 })
