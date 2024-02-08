@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
-
+import { matchPasswords } from './validators/matchpasswords.validator';
 @Component({
   selector: 'app-user-signup',
   templateUrl: './user-signup.component.html',
@@ -20,6 +20,9 @@ export class UserSignupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
+    },
+    {
+      validator: matchPasswords,
     });
   }
 

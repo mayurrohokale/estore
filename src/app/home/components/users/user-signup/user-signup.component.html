@@ -101,6 +101,12 @@
         <span class="text-danger" *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']">
            confirm password is reuired
         </span>
+        <span class="text-danger" *ngIf="confirmPassword?.touched   && userSignupForm?.errors?.['passwordMissmatch']">
+          Passwords ddon't match
+        </span>
+                                    
+        
+     
       </div>
       <div class="text-center form-group-margin">
         <button type="submit" class="btn btn-warning" [disabled]="!userSignupForm.valid">Join</button>
