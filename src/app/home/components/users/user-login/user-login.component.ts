@@ -5,9 +5,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { UserServiceService } from '../services/user-service.service';
+import { UserServiceService } from '../../../services/users/user-service.service';
 import { user } from 'src/app/home/types/user.type';
-
+import { loginToken } from 'src/app/home/types/user.type';
 
 @Component({
   selector: 'app-user-login',
@@ -16,7 +16,9 @@ import { user } from 'src/app/home/types/user.type';
 })
 export class UserLoginComponent {
   userLoginForm: FormGroup;
-  constructor(private fb: FormBuilder){}
+  alertType: number = 0;
+  alertMessage: string = '';
+  constructor(private fb: FormBuilder, private userService: UserServiceService){}
 
   ngOnInit(): void{
     this.userLoginForm = this.fb.group({
@@ -33,5 +35,16 @@ export class UserLoginComponent {
     return this.userLoginForm.get('password');
   }
 
-  onSubmit(): void{}
+  onSubmit(): void{
+    this.userService.login(this.email?.value, this.password?.value).subscribe({
+      next:(result: loginToken)=>{
+        this.userService.activateToken(result);
+        this.alertType = 0;
+        this.alertMessage = 'Login Successfully';
+      }, error:(error)=>{
+        this.alertType = 2;
+        this.alertMessage = error.error.message;
+      }
+    })
+  }
 }

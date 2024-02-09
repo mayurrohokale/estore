@@ -22,6 +22,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { UserSignupComponent } from './components/users/user-signup/user-signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './components/users/user-login/user-login.component';
+import { UserServiceService } from './services/users/user-service.service';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -44,6 +45,6 @@ import { UserLoginComponent } from './components/users/user-login/user-login.com
     HomeRoutingModule,
     ReactiveFormsModule
   ],
-  providers:[CategoryService, CategoriesStoreItem, ProductsService, ProductsStoreItem, CartStoreItem]
+  providers:[CategoryService, CategoriesStoreItem, ProductsService, ProductsStoreItem, CartStoreItem, UserServiceService]
 })
 export class HomeModule { }
