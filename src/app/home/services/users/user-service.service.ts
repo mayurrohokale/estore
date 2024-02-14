@@ -6,6 +6,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 @Injectable(
   )
 export class UserServiceService {
+  private autoLoggedoutTimmer: any;
 
   private isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject(false);
   private loggedInUserInfo: BehaviorSubject<loggedInUser> = new BehaviorSubject(<loggedInUser>{});
@@ -37,6 +38,7 @@ export class UserServiceService {
   }
 
   activateToken(token:loginToken):void{
+    token.expiresInSeconds = 10;
       localStorage.setItem('token', token.token);
       localStorage.setItem('expiry', new Date(Date.now()+ token.expiresInSeconds * 1000).toISOString());
       localStorage.setItem('firstName', token.user.firstName);
@@ -48,12 +50,20 @@ export class UserServiceService {
 
       this.isAuthenticated.next(true);
       this.loggedInUserInfo.next(token.user);
+      this.setAutoLogoutTimer(token.expiresInSeconds * 1000);
   }
 
   logout(): void{
     localStorage.clear();
     this.isAuthenticated.next(false);
     this.loggedInUserInfo.next(<loggedInUser>{});
+    clearTimeout(this.autoLoggedoutTimmer);
+  }
+
+  private setAutoLogoutTimer(duration: number) :void{
+    this.autoLoggedoutTimmer =setTimeout(()=>{
+      this.logout();
+    }, duration);
   }
 
   loadToken():void{
@@ -83,6 +93,7 @@ export class UserServiceService {
         }
         this.isAuthenticated.next(true);
         this.loggedInUserInfo.next(user);
+        this.setAutoLogoutTimer(expiresIn);
 
       }
       else {
