@@ -10,7 +10,9 @@ export class UserServiceService {
   private isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject(false);
   private loggedInUserInfo: BehaviorSubject<loggedInUser> = new BehaviorSubject(<loggedInUser>{});
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.loadToken();
+   }
   
   get isUserAuthenticated(): boolean{
     return this.isAuthenticated.value;
@@ -79,7 +81,12 @@ export class UserServiceService {
           pin: pin !== null ? pin: '',
 
         }
-        this.isAuthenticated
+        this.isAuthenticated.next(true);
+        this.loggedInUserInfo.next(user);
+
+      }
+      else {
+        this.logout();
       }
     }
   }
