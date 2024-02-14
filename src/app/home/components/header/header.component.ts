@@ -56,6 +56,10 @@ constructor(public  categoryStore: CategoriesStoreItem, private router: Router, 
   navigatToCart():void{
     this.router.navigate(['home/cart']);
   }
+
+  logout(): void{
+    this.userService.logout();
+  }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
