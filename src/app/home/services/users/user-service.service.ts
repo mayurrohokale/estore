@@ -7,7 +7,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   )
 export class UserServiceService {
   private autoLoggedoutTimmer: any;
-
+  private authToken: string;
   private isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject(false);
   private loggedInUserInfo: BehaviorSubject<loggedInUser> = new BehaviorSubject(<loggedInUser>{});
 
@@ -27,6 +27,10 @@ export class UserServiceService {
     return this.loggedInUserInfo.asObservable();
   }
 
+  get token(): string {
+
+    return this.authToken;
+  }
 
   createUser(user: user): Observable<any> {
     const url: string = 'http://localhost:5001/users/signup';
@@ -37,7 +41,7 @@ export class UserServiceService {
     return this.httpClient.post(url, {email: email, password: password});
   }
 
-  activateToken(token:loginToken):void{
+  activateToken(token:loginToken, email:string):void{
     
       localStorage.setItem('token', token.token);
       localStorage.setItem('expiry', new Date(Date.now()+ token.expiresInSeconds * 1000).toISOString());
@@ -47,10 +51,12 @@ export class UserServiceService {
       localStorage.setItem('city', token.user.city);
       localStorage.setItem('state', token.user.state);
       localStorage.setItem('pin', token.user.pin);
+      localStorage.setItem('email', email);
 
       this.isAuthenticated.next(true);
       this.loggedInUserInfo.next(token.user);
       this.setAutoLogoutTimer(token.expiresInSeconds * 1000);
+      this.authToken = token.token;
   }
 
   logout(): void{
@@ -81,7 +87,9 @@ export class UserServiceService {
         const city: string | null = localStorage.getItem('city');
         const state: string | null = localStorage.getItem('state');
         const pin: string | null = localStorage.getItem('pin');
+        const email: string | null = localStorage.getItem('email');
 
+        
         const user: loggedInUser = {
           firstName: firstName !== null ? firstName: '',
           lastName: lastName !== null ? lastName: '',
@@ -89,11 +97,12 @@ export class UserServiceService {
           city: city !== null ? city: '',
           state: state !== null ? state: '',
           pin: pin !== null ? pin: '',
-
+          email: email !== null? email: '',
         }
         this.isAuthenticated.next(true);
         this.loggedInUserInfo.next(user);
         this.setAutoLogoutTimer(expiresIn);
+        this.authToken = token;
 
       }
       else {

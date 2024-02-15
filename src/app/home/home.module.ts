@@ -23,6 +23,7 @@ import { UserSignupComponent } from './components/users/user-signup/user-signup.
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './components/users/user-login/user-login.component';
 import { UserServiceService } from './services/users/user-service.service';
+import { OrderService } from './services/order/order.service';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -45,6 +46,7 @@ import { UserServiceService } from './services/users/user-service.service';
     HomeRoutingModule,
     ReactiveFormsModule
   ],
-  providers:[CategoryService, CategoriesStoreItem, ProductsService, ProductsStoreItem, CartStoreItem, UserServiceService]
+  providers:[CategoryService, CategoriesStoreItem, ProductsService, ProductsStoreItem, CartStoreItem, UserServiceService,
+  OrderService]
 })
 export class HomeModule { }
