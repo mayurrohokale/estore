@@ -52,6 +52,7 @@
         </div>
       </div>
       <div class="col-4">
+        <ng-container *ngIf="cartStore.cart.products.length" >
         <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="px-4 py-1 my-3 cart-summary">
@@ -119,7 +120,7 @@
           <div class="row">
             <div
               class="px-4 py-3 my-4 cart-summary"
-              *ngIf="cartStore.cart.products.length"
+              
             >
               <h2 class="mb-5 mt-3">Summary</h2>
               <div>
@@ -141,6 +142,7 @@
             </div>
           </div>
         </form>
+      </ng-container>
       </div>
     </div>
   </ng-container>
