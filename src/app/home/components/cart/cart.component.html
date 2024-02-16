@@ -5,6 +5,10 @@
       <div class="btn btn-warning my-3" (click)="navigateToHome()">
         <span style="font-weight: 500"> Continue Shopping </span>
       </div>
+      <div class="alert" [ngClass]="alertType === 0 ? 'alert-success': 'alert-danger'"
+        *ngIf="alertMessage !== ''">
+          {{alertMessage}}
+      </div>
     </div>
   </ng-container>
   <ng-container *ngIf="cartStore.cart$ | async as cart">
@@ -53,6 +57,10 @@
       </div>
       <div class="col-4">
         <ng-container *ngIf="cartStore.cart.products.length" >
+          <div class="alert" [ngClass]="alertType === 0 ? 'alert-success': 'alert-danger'"
+          *ngIf="alertMessage !== ''">
+            {{alertMessage}}
+        </div>
         <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="px-4 py-1 my-3 cart-summary">
@@ -135,7 +143,7 @@
               <button
                 type="submit"
                 class="btn submit-button"
-                [disabled]="!orderForm.valid"
+                [disabled]="!orderForm.valid || disableCheckout" 
               >
                 Checkout
               </button>
