@@ -24,6 +24,7 @@ export interface PastOrder {
     pin:string;
     total: number;
     orderDate: string;
+    orderId: number;
 }
 
 
@@ -34,4 +35,5 @@ export interface PastOrderProduct {
     price: number;
     amount: number;
     productName: string;
+    
 }
