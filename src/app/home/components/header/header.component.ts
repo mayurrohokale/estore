@@ -59,6 +59,7 @@ constructor(public  categoryStore: CategoriesStoreItem, private router: Router, 
 
   logout(): void{
     this.userService.logout();
+    this.router.navigate(['home/products']);
   }
 
   pastOrders(): void{
