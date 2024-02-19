@@ -60,6 +60,11 @@ constructor(public  categoryStore: CategoriesStoreItem, private router: Router, 
   logout(): void{
     this.userService.logout();
   }
+
+  pastOrders(): void{
+    this.router.navigate(['home/pastorders']);
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

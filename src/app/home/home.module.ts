@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './components/users/user-login/user-login.component';
 import { UserServiceService } from './services/users/user-service.service';
 import { OrderService } from './services/order/order.service';
+import { PastordersComponent } from './components/pastorders/pastorders.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -35,7 +36,8 @@ import { OrderService } from './services/order/order.service';
     ProductdetailsComponent,
     CartComponent,
     UserSignupComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    PastordersComponent
   ],
   imports: [
     CommonModule,
