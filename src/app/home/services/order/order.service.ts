@@ -50,7 +50,7 @@ export class OrderService {
     }
 
     getOrderProducts(orderId: number): Observable<PastOrderProduct[]>{
-      const url: string = `http: //localhost:5001/orders/orderproducts?orderId=${orderId}`;
+      const url: string = `http://localhost:5001/orders/orderproducts?orderId=${orderId}`;
       return this.httpClient.get<PastOrderProduct[]>(url, {
         headers: {authorization: this.userService.token},
       })
